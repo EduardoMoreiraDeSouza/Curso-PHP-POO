@@ -3,35 +3,39 @@
 class Caneta {
 
     public $modelo;
-    public $cor;
     private $ponta;
-    protected $carga;
-    protected $tampada;
+    private $tampada;
 
-    public function rabiscar() {
-
-        if ($this -> tampada == true) {
-
-            print "<p>Não Posso rabiscar!</p>";
-
-        } else {
-
-            print '<p>Estou rabiscando...<br></p>';
-
-        }
+    public function __construct($modelo, $cor, $ponta) {
+        
+       $this -> setModelo($modelo);
+       $this -> cor = $cor;
+       $this -> setPonta($ponta);
+       $this -> tampar();
 
     }
+
 
     public function tampar() {
-
         $this -> tampada = true;
-        
     }
 
-    public function destampar() {
 
-        $this -> tampada = false;
-        
+    public function getModelo() {
+        return $this->modelo;    
+    }
+
+    public function setModelo($modelo) {
+        $this -> modelo = $modelo;
+    }
+
+
+    public function getPonta() {
+        return $this->ponta;    
+    }
+
+    public function setPonta($ponta) {
+        $this -> ponta = $ponta;
     }
     
 }
