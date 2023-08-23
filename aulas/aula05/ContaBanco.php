@@ -15,6 +15,8 @@ class ContaBanco {
         $this -> saldo = 0;
         $this -> status = false;
 
+        print "Conta Criada com Sucesso!<br/>";
+
     }
 
     public function abrirConta($tipo) {
@@ -31,9 +33,9 @@ class ContaBanco {
 
     public function fecharConta() {
 
-        if ($this -> saldo > 0) 
+        if ($this -> getSaldo() > 0) 
             print "Ops! Sua conta está com dinheiro!";
-        elseif ($this -> saldo < 0)
+        elseif ($this -> getSaldo() < 0)
             print "Ops! Você está em débito conosco!";
         else
             $this -> setStatus(false);
@@ -52,8 +54,10 @@ class ContaBanco {
     public function sacar($valor) {
 
         if ($this -> getStatus() == true)
-            if ($this -> getSaldo() > 0)
-                $this -> setSaldo($this -> getSaldo() + $valor);
+            if ($this -> getSaldo() > 0) {
+                $this -> setSaldo($this -> getSaldo() - $valor);
+                print "Saque efetuado com sucesso!<br/>";
+            }
             else
             print "Você precisa ter um saldo positivo na conta para sacar!";    
         else
@@ -63,19 +67,23 @@ class ContaBanco {
 
     public function pagarMensalidade() {
 
-        if ($this -> saldo < 0)
-            print "Ops! Você não tem saldo suficiente para pagar a mensalidade!";
+        if (!$this -> getStatus()) print "Você não tem uma conta conosco para pagar a mensalidade!";
         
-        if ($this -> tipo == 'cc')
-            $valor = 12;
-        elseif ($this -> tipo == 'cp')
-            $valor = 20;
-        
-        if ($this -> getStatus() == true)
-            $this -> setSaldo($this -> getSaldo() - $valor);
-        else
-            print "Você não tem uma conta conosco para pagar a mensalidade!";
+        else {
 
+            if ($this -> getSaldo() < 0) print "Ops! Você não tem saldo suficiente para pagar a mensalidade!";
+                
+            else {
+                if ($this -> getTipo() == 'cc')
+                    $valor = 12;
+                elseif ($this -> getTipo() == 'cp')
+                    $valor = 20;
+
+                $this -> setSaldo($this -> getSaldo() - $valor);
+            }
+
+        }
+            
     }
 
     public function getNumConta() {
