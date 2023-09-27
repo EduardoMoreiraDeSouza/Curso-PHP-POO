@@ -1,6 +1,5 @@
 <?php
 require_once 'Ave.php';
-  class Arara extends Ave {
-
-  }
- ?>
+class Arara extends Ave
+{
+}

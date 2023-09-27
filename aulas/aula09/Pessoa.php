@@ -1,37 +1,51 @@
 <?php
 
-  class Pessoa {
-    private $nome;
-    private $idade;
-    private $sexo;
+class Pessoa
+{
+  private $nome;
+  private $idade;
+  private $sexo;
 
-    function __construct ($no, $id, $se) {
-      $this->nome = $no;
-      $this->idade = $id;
-      $this->sexo = $se;
-    }
-     function getNome() {
-      return $this->nome;
-    }
-     function getIdade() {
-      return $this->idade;
-    }
-     function getSexo() {
-      return $this->sexo;
-    }
-     function setNome($no) {
-      $this->nome = $no;
-    }
-     function setIdade($id) {
-      $this->idade = $id;
-    }
-     function setSexo($se) {
-      $this->sexo = $se;
-    }
-
-    public function fazerAniver() {
-      $this->setIdade($this->getIdade() + 1);
-      echo $this->getNome() . " fez aniversário agora tem " . $this->getIdade() . " anos de idade. Parabéns.";
-    }
+  public function __construct($no, $id, $se)
+  {
+    $this -> nome = $no;
+    $this -> idade = $id;
+    $this -> sexo = $se;
   }
- ?>
+
+  public function getNome(): string
+  {
+    return $this -> nome;
+  }
+
+  public function getIdade(): int
+  {
+    return $this -> idade;
+  }
+
+  public function getSexo(): string
+  {
+    return $this -> sexo;
+  }
+
+  public function setNome($no): void
+  {
+    $this -> nome = $no;
+  }
+
+  public function setIdade($id): void
+  {
+    $this -> idade = $id;
+  }
+  
+  public function setSexo($se): void
+  {
+    $this -> sexo = $se;
+  }
+
+  public function fazerAniver(): void
+  {
+    $this -> setIdade($this -> getIdade() + 1);
+    echo $this -> getNome() . " fez aniversário agora tem " . $this -> getIdade() . " anos de idade. Parabéns.";
+  }
+}

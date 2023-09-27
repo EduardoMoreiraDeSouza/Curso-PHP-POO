@@ -1,24 +1,31 @@
 <?php
-class Caneta {
+class Caneta
+{
   var $modelo;
   var $cor;
   var $ponta;
   var $carga;
   var $tampada;
 
-  function rabiscar() {
-    if ($this->tampada == true) {
-      echo "<p>Erro! Não posso rabiscar.</p>";
+  public function rabiscar()
+  {
+
+    if ($this -> tampada) {
+
+      print "<p>Erro! Não posso rabiscar.</p>";
     } else {
-        echo "<p>Estou Rabiscando...</p>";
+
+      print "<p>Estou Rabiscando...</p>";
     }
   }
-  function tampar() {
-    $this->tampada = true;
+
+  public function tampar(): void
+  {
+    $this -> tampada = true;
   }
-  function destampar() {
-    $this->tampada = false;
+  
+  public function destampar(): void
+  {
+    $this -> tampada = false;
   }
 }
-
- ?>

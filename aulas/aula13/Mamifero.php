@@ -1,18 +1,31 @@
 <?php
 require_once 'Animal.php';
 
-  class Mamifero extends Animal {
-    protected $corPelo;
+class Mamifero extends Animal
+{
+  protected $corPelo;
 
-    function emitirSom() {
-      echo "Som de mamifero ";
-    }
-
-    function getCorPelo() {
-      return $this->corPelo;
-    }
-    function setCorPelo($corPelo) {
-      $this->corPelo = $corPelo;
-    }
+  function locomover(): void
+  {
+    /*  */
   }
- ?>
+
+  function alimentar(): void
+  {
+    /*  */
+  }
+
+  function emitirSom(): void
+  {
+    echo "Som de mamifero ";
+  }
+
+  function getCorPelo(): string
+  {
+    return $this -> corPelo;
+  }
+  function setCorPelo($corPelo): void
+  {
+    $this -> corPelo = $corPelo;
+  }
+}

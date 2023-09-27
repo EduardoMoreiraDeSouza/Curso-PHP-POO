@@ -1,24 +1,34 @@
 <?php
 require_once 'Pessoa.php';
 
-class Professor extends Pessoa {
+class Professor extends Pessoa
+{
   private $especialidade;
   private $salario;
 
-  public function receberAumento($valor) {
-    $this->setSalario($this->getSalario() + $val);
-      }
+  public function receberAumento($valor): void
+  {
+    $this -> setSalario($this -> getSalario() + $valor);
+  }
 
-  function getEspecialidade() {
-    return $this->especialidade;
+  public function getEspecialidade(): string
+  {
+    return $this -> especialidade;
   }
-  function getSalario() {
-   return $this->salario;
+
+  public function getSalario(): float
+  {
+    return $this -> salario;
   }
-  function setEspecialidade($e) {
-    $this->especialidade = $e;
+
+  public function setEspecialidade($especialidade): void
+  {
+    $this -> especialidade = $especialidade;
   }
-  function setSalario ($v);
-  $this->salario = $v;
+
+  public function setSalario($salario): void
+  {
+    $this -> salario = $salario;
+  }
+
 }
- ?>

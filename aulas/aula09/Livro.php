@@ -2,7 +2,8 @@
 require_once 'Pessoa.php';
 require_once 'Publicacao.php';
 
-class Livro implements Publicacao{
+class Livro implements Publicacao
+{
   private $titulo;
   private $autor;
   private $totPaginas;
@@ -10,90 +11,126 @@ class Livro implements Publicacao{
   private $aberto;
   private $leitor;
 
-  function __construct($ti, $au, $pag,$lei) {
-    $this->titulo = $ti;
-    $this->autor = $au;
-    $this->totPaginas = $pag;
-    $this->pagAtual = 1;
-    $this->aberto = false;
-    $this->leitor = $lei;
+  public function __construct($ti, $au, $pag, $lei)
+  {
+    $this -> titulo = $ti;
+    $this -> autor = $au;
+    $this -> totPaginas = $pag;
+    $this -> pagAtual = 1;
+    $this -> aberto = false;
+    $this -> leitor = $lei;
   }
-   function getTitulo () {
-    return $this->titulo;
+
+  public function getTitulo(): string
+  {
+    return $this -> titulo;
   }
-   function getAutor () {
-    return $this->autor;
+
+  public function getAutor(): string
+  {
+    return $this -> autor;
   }
-   function getTotPaginas () {
-    return $this->totPaginas;
+
+  public function getTotPaginas(): int
+  {
+    return $this -> totPaginas;
   }
-   function getPagAtual () {
-    return $this->pagAtual;
+
+  public function getPagAtual(): int
+  {
+    return $this -> pagAtual;
   }
-   function getAberto () {
-    return $this->aberto;
+
+  public function getAberto(): string
+  {
+    return $this -> aberto;
   }
-   function getLeitor () {
-    return $this->leitor;
+
+  public function getLeitor(): string
+  {
+    return $this -> leitor;
   }
-   function setTitulo ($ti) {
-    $this->titulo = $ti;
+
+  public function setTitulo($ti): void
+  {
+    $this -> titulo = $ti;
   }
-   function setAutor ($au) {
-    $this->autor = $au;
+
+  public function setAutor($au): void
+  {
+    $this -> autor = $au;
   }
-   function setTotPaginas ($tot) {
-    $this->totPaginas = $tot;
+
+  public function setTotPaginas($tot): void
+  {
+    $this -> totPaginas = $tot;
   }
-   function setPagAtual ($pa) {
-    $this->pagAtual = $pa;
+
+  public function setPagAtual($pa): void
+  {
+    $this -> pagAtual = $pa;
   }
-   function setAberto ($ab) {
-    $this->aberto = $ab;
+
+  public function setAberto($ab): void
+  {
+    $this -> aberto = $ab;
   }
-   function setLeitor ($lei) {
-    $this->leitor = $lei;
+
+  public function setLeitor($lei): void
+  {
+    $this -> leitor = $lei;
   }
-  public function detalhes() {
-    echo "Livro: " . $this->titulo . " escrito por " . $this->autor;
-    echo "<br />Páginas: " . $this->totPaginas . " Atual: " . $this->getPagAtual();
-    echo "<br />Sendo lido por " . $this->leitor->getNome();
+
+  public function detalhes(): void
+  {
+    echo "Livro: " . $this -> titulo . " escrito por " . $this -> autor;
+    echo "<br />Páginas: " . $this -> totPaginas . " Atual: " . $this -> getPagAtual();
+    echo "<br />Sendo lido por " . $this -> leitor->getNome();
   }
-  public function abrir(){
-    if ($this->getAberto() == true) {
+
+  public function abrir(): void
+  {
+    if ($this -> getAberto() == true) {
       echo "Já estou aberto";
     } else {
-      $this->setAberto(true);
+      $this -> setAberto(true);
     }
   }
-  public function fechar(){
-    if ($this->getAberto() == false) {
+
+  public function fechar(): void
+  {
+    if ($this -> getAberto() == false) {
       echo "Já estou fechado";
     } else {
-      $this->setAberto(false);
+      $this -> setAberto(false);
     }
   }
-  public function folhear($p){
-    if ($this->aberto == true && $p <= $this->getTotPaginas()) {
-      $this->pagAtual = $p;
+
+  public function folhear($p): void
+  {
+    if ($this -> aberto == true && $p <= $this -> getTotPaginas()) {
+      $this -> pagAtual = $p;
     } else {
       echo "O livro está fechado ou estou indo para uma página inacessivel";
     }
   }
-  public function avancarPag(){
-    if ($this->aberto == false or $this->getPagAtual() == $this->getTotPaginas()) {
+
+  public function avancarPag(): void
+  {
+    if ($this -> aberto == false or $this -> getPagAtual() == $this -> getTotPaginas()) {
       echo "Não posso avançar estou fechado ou no fim do livro";
     } else {
-      $this->setPagAtual($this->getPagAtual() + 1);
+      $this -> setPagAtual($this -> getPagAtual() + 1);
     }
   }
-  public function voltarPag(){
-    if ($this->aberto == false or $this->getPagAtual() == 1) {
+
+  public function voltarPag(): void
+  {
+    if ($this -> aberto == false or $this -> getPagAtual() == 1) {
       echo "Não posso voltar estou fechado ou na página inicial";
     } else {
-      $this->setPagAtual($this->getPagAtual() - 1);
+      $this -> setPagAtual($this -> getPagAtual() - 1);
     }
   }
+  
 }
-
- ?>

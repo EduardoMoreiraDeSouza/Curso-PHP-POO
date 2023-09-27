@@ -1,47 +1,59 @@
 <?php
 require_once 'Lobo.php';
-class Cachorro extends Lobo {
+class Cachorro extends Lobo
+{
 
-  function emitirSom() {
+  public function emitirSom(): void
+  {
     echo "Au! Au! Au!";
   }
-  function reagirFrase($frase) {
-    if ($frase == "toma comida" || $frase == "Olá") {
+
+  public function reagirFrase($frase): void
+  {
+    if ($frase == "toma comida" || $frase == "Olá")
       echo "<br />Abanar e Latir ";
-    } else {
-    echo "<br />Rosnar ";
-    }
+    else
+      echo "<br />Rosnar ";
+      
   }
-  function reagirHora($hora, $min) {
-    if ($hora < 12) {
+
+  public function reagirHora($hora): void
+  {
+    if ($hora < 12)
       echo "<br />Abanar ";
-    } elseif ($hora >= 18) {
+    elseif ($hora >= 18)
       echo "<br />Ignorar ";
-    } else {
+    else
       echo "<br />Abanar e Latir ";
-    }
+    
   }
-  function reagirDono($dono) {
-    if ($dono == true) {
+
+  public function reagirDono($dono): void
+  {
+    if ($dono == true)
       echo "<br />Abanar ";
-    } else {
+    else
       echo "<br />Rosnar e latir ";
-    }
+
   }
-  function reagirIdadePeso($idade, $peso) {
+
+  public function reagirIdadePeso($idade, $peso): void
+  {
     if ($idade < 5) {
-      if ($peso < 10) {
+
+      if ($peso < 10)
         echo "<br />Abanar";
-      } else {
+      else
         echo "<br />Latir";
-      }
-      } else {
-      if ($peso < 10) {
+          
+    } else {
+      if ($peso < 10)
         echo "<br />Rosnar";
-      } else {
+      else
         echo "<br />Ignorar";
-      }
+      
     }
-	}
+
+  }
+
 }
-  ?>

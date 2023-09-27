@@ -1,27 +1,39 @@
 <?php
 
-abstract class Animal {
+abstract class Animal
+{
   protected $peso, $idade, $membros;
 
   public abstract function emitirSom();
 
-  function getPeso () {
-    return $this->peso;
+  public function getPeso(): float
+  {
+    return $this -> peso;
   }
-  function getIdade() {
-    return $this->idade;
+  
+  public function getIdade(): int
+  {
+    return $this -> idade;
   }
-  function getMembros() {
-    return $this->membros;
+  
+  public function getMembros(): string
+  {
+    return $this -> membros;
   }
-  function setPeso($peso) {
-    $this->peso = $peso;
+  
+  public function setPeso($peso): void
+  {
+    $this -> peso = $peso;
   }
-  function setIdade($idade) {
-    $this->idade = $idade;
+  
+  public function setIdade($idade): void
+  {
+    $this -> idade = $idade;
   }
-  function setMembros($membros) {
-    $this->membros = $membros;
+  
+  public function setMembros($membros): void
+  {
+    $this -> membros = $membros;
   }
+  
 }
- ?>

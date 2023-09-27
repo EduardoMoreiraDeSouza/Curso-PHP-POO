@@ -1,23 +1,33 @@
 <?php
 require_once 'Pessoa.php';
-class Funcionario extends Pessoa {
+class Funcionario extends Pessoa
+{
   private $setor;
   private $trabalhando;
 
-  function mudarTrabalho() {
-    $this->setTrabalhando($this->getTrabalhando());
+  public function mudarTrabalho(): void
+  {
+    $this -> setTrabalhando($this -> getTrabalhando());
   }
-  function getSetor() {
-    return $this->setor;
+
+  public function getSetor(): string
+  {
+    return $this -> setor;
   }
-  function getTrabalhando() {
-    return $this->trabalhando;
+
+  public function getTrabalhando(): bool
+  {
+    return $this -> trabalhando;
   }
-  function setSetor($set) {
-    $this->setor = $set;
+
+  public function setSetor($setor): void
+  {
+    $this -> setor = $setor;
   }
-  function setTrabalhando($trab) {
-    $this->trabalhando = ! $trab;
+
+  public function setTrabalhando($trabalhando): void
+  {
+    $this -> trabalhando = $trabalhando;
   }
+  
 }
- ?>

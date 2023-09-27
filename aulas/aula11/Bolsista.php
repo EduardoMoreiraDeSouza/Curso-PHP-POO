@@ -1,20 +1,23 @@
 <?php
 require_once 'Aluno.php';
-class Bolsista extends Aluno {
+class Bolsista extends Aluno
+{
   private $bolsa;
 
-  function renovarBolsa() {
+  public function renovarBolsa(): void
+  {
     echo "Bolsa Renovada";
   }
-  public function pagarMensalidade() {
-    echo "<p>" . $this->getNome() . " é Bolsista! Então paga com desconto!</p>";
+  public function pagarMensalidade(): void
+  {
+    echo "<p>" . $this -> getNome() . " é Bolsista! Então paga com desconto!</p>";
   }
-  function getBolsa() {
-    return $this->bolsa;
+  public function getBolsa(): string
+  {
+    return $this -> bolsa;
   }
-  function setBolsa($b) {
-    $this->bolsa = $b;
+  public function setBolsa($bolsa): void
+  {
+    $this -> bolsa = $bolsa;
   }
 }
-
- ?>

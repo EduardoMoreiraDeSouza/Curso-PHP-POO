@@ -1,8 +1,10 @@
 <?php
 require_once 'Reptil.php';
-  class Tartaruga extends Reptil {
-    public function locomover() {
-      echo "Andando Beeeeem devagar";
-    }
+class Tartaruga extends Reptil
+{
+  public function locomover(): void
+  {
+    echo "Andando Beeeeem devagar";
   }
- ?>
+
+}

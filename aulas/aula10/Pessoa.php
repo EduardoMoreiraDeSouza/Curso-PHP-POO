@@ -1,30 +1,44 @@
 <?php
 
-  class Pessoa {
-    private $nome;
-    private $idade;
-    private $sexo;
+class Pessoa
+{
+  private $nome;
+  private $idade;
+  private $sexo;
 
-    function fazerAniv() {
-      $this->getIdade() + 1;
-    }
-    function getNome() {
-      return $this->nome;
-    }
-    function getIdade() {
-      return $this->idade;
-    }
-    function getSexo() {
-      return $this->sexo;
-    }
-    function setNome($no) {
-      $this->nome = $no;
-    }
-    function setIdade($id) {
-      $this->idade = $id;
-    }
-    function setSexo($se) {
-      $this->sexo = $se;
-    }
+  public function fazerAniv()
+  {
+    return $this -> getIdade() + 1;
   }
- ?>
+
+  public function getNome(): string
+  {
+    return $this -> nome;
+  }
+
+  public function getIdade(): int
+  {
+    return $this -> idade;
+  }
+
+  public function getSexo(): string
+  {
+    return $this -> sexo;
+  }
+
+  public function setNome($nome): void
+  {
+    $this -> nome = $nome;
+  }
+
+  public function setIdade($idade): void
+  {
+    $this -> idade = $idade;
+  }
+
+  public function setSexo($sexo): void
+  {
+    $this -> sexo = $sexo;
+  }
+  
+}

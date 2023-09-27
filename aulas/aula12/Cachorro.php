@@ -1,8 +1,9 @@
 <?php
 require_once 'Mamifero.php';
-  class Cachorro extends Mamifero {
-    public function emitirSom() {
-      echo " AU AU AU AU ";
-    }
+class Cachorro extends Mamifero
+{
+  public function emitirSom(): void
+  {
+    echo " AU AU AU AU ";
   }
- ?>
+}
